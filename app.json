@@ -6,6 +6,9 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "extra": {
+      "hostAPI": "http://localhost:3004/api"
+    },
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
