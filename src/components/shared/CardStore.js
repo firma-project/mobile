@@ -1,84 +1,80 @@
-import React from 'react';
-import styled from 'styled-components';
 import heart from '../../../assets/heart.png';
-import AvatarProduct from '../../styles/AvatarProduct';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+  Pressable,
+  Image,
+} from 'react-native';
 
-export function CardStore({ image, name, price, available }) {
+export function CardStore({ image, name, price, available, description }) {
   return (
-    <CardContainer>
-      <CardColumnContainer>
-        <TextStyled>{name}</TextStyled>
-        <AvatarProduct image={image} />
-      </CardColumnContainer>
-      <CardColumnContainer>
-        <TextStyled>Hearts Price:</TextStyled>
-        <LoveIcon>
-          <TextStyled>{price}</TextStyled>
-          <img src={heart} alt="hearts" />
-        </LoveIcon>
-      </CardColumnContainer>
-      <CardColumnContainer>
-        <TextStyled>In Stock:</TextStyled>
-        <TextStyled>{available}</TextStyled>
-      </CardColumnContainer>
-      <ButtonContainer>
-        <Button>Buy it!</Button>
-      </ButtonContainer>
-    </CardContainer>
+    <View style={[styles.card, styles.shadowProp]}>
+      <View style={styles.productImage}>
+        <Image style={styles.image} source={{ uri: image }} />
+      </View>
+      <View style={styles.body}>
+        <Text style={styles.title}>{name}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </View>
+      <View style={styles.price}>
+          <Text style={styles.priceValue}>{price}</Text>
+          <Image source={heart} style={{width: 20, height: 20}}/>
+      </View>
+    </View>
   );
 }
-const ButtonContainer = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-`;
+const styles = StyleSheet.create({
 
-const Button = styled.button`
-  background: palevioletred;
-  border-radius: 3px;
-  border: none;
-  color: white;
-  margin: 7px;
-  cursor: pointer;
-`;
-
-const TextStyled = styled.h4`
-  margin: 0;
-  color: rgba(50, 50, 50, 1);
-  padding-bottom: 10px;
-`;
-
-const CardContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  background: #f0efeb;
-  margin: 8px 10px;
-  min-width: 300px;
-  height: 200px;
-
-  &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  }
-`;
-
-const CardColumnContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const LoveIcon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    max-width: 40px;
-  }
-`;
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 8,
+    paddingVertical: 45,
+    paddingHorizontal: 4,
+    width: '98vw',
+    marginVertical: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  productImage: {
+    flex: 1,
+  },
+  body: {
+    marginBottom: 13,
+    flex: 2,
+    paddingHorizontal: 20,
+  },
+  price: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: "center",
+  },
+  priceValue: {
+    color: "#F94E6D",
+    fontWeight: '600',
+    fontSize: 24,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 14,
+  },
+  description: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: "#8c8c8c"
+  },
+  image: {
+    width: 80,
+    height: 80,
+    objectFit: 'cover',
+  },
+  shadowProp: {
+    shadowColor: '#171717',
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+  },
+});

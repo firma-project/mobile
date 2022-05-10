@@ -1,18 +1,16 @@
 import React from 'react';
-import styled from "styled-components";
+import styled from 'styled-components/native'
 
 export default function AvatarProduct({ image }) {
-
     return (
-        <ProductAvatar>
-            <img src={image} alt=''/>
+        <ProductAvatar 
+            source={image}>
         </ProductAvatar>
     )
 }
 
-const ProductAvatar = styled.div`
-    img {
-        max-width: 64px;
-        border-radius: 20%;
-    }
+const ProductAvatar = styled.Image`
+    width: 80;
+    height: 80;
+    border-radius: 20%;
 `
