@@ -9,6 +9,7 @@ function renderItem ({ item }) {
     return (
         <CardProfile 
             name={item.name}
+            profileImage={item.profile}
         />
     )
 }

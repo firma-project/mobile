@@ -17,8 +17,6 @@ const styles = StyleSheet.create({
       width: '98vw',
       marginVertical: 10,
       flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
     },
     shadowProp: {
         shadowColor: '#171717',
