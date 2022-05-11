@@ -4,12 +4,10 @@ import { CardStore } from '../components/shared/CardStore';
 import { listProducts } from '../services/firma.service';
 
 
-const items = [{id:1}, {id: 2}]
 
 const renderItem = ({ item }) => {
     return (
         <CardStore 
-   
             image={item.imageUrl}
             name={item.name}
             price={item.price}
@@ -33,8 +31,7 @@ export function Store () {
                   <FlatList
                     data={products}
                     renderItem={renderItem}
-                    keyExtractor={(item) => item.id}
-          
+                    keyExtractor={(item) => item._id}
                 />
         </SafeAreaView>
     )

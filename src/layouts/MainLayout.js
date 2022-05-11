@@ -29,7 +29,7 @@ export function MainLayout({ children }) {
       >
         <Tab.Screen
           name="Main"
-          component={Main}
+          component={User}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Feather name="home" color={color} size={32} />

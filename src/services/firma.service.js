@@ -24,6 +24,10 @@ function createUser ({
     return axios.post(`${HOST}/users`, body);
 }
 
+function listUsers () {
+    return axios.get(`${HOST}/users`);
+}
+
 function listProducts () {
     return axios.get(`${HOST}/store/products`);
 }
@@ -32,4 +36,5 @@ export {
     getUsers,
     createUser,
     listProducts,
+    listUsers,
 }

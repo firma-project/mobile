@@ -3,8 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Platform,
-  Pressable,
   Image,
 } from 'react-native';
 
