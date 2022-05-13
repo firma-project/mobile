@@ -1,5 +1,7 @@
 import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
 import Card from './Card';
+import heart from '../../../assets/heart.png';
+
 
 export default function CardProfile({ _id, name, email, profileImage }) {
   return (
@@ -7,10 +9,11 @@ export default function CardProfile({ _id, name, email, profileImage }) {
       <View style={styles.container}>
         <Image style={styles.image} source={{ uri: profileImage }} />
         <View style={styles.info}>
-            <Text>{name}</Text>
+            <Text style={styles.primary}>{name}</Text>
+            <Text style={styles.secondary}>{email}</Text>
         </View>
         <TouchableOpacity style={styles.button}>
-            <Text>Like</Text>
+            <Image source={heart} style={{ width: 30, height: 30 }} />
         </TouchableOpacity>
       </View>
     </Card>
@@ -36,7 +39,14 @@ const styles = StyleSheet.create({
       flex: 1,
       marginHorizontal: 12,
   },
-  button: {
-    backgroundColor: '#F94E6D',
+  primary: {
+    fontSize: 18,
+    fontWeight: '600'
+  },
+  secondary: {
+    fontSize: 12,
+    marginTop: 4,
+    color: '#444444',
+    fontWeight: '600'
   }
 });

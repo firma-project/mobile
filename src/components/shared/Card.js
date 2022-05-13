@@ -2,7 +2,7 @@ import { View, StyleSheet } from 'react-native';
 
 export default function Card (props) {
     return (
-        <View style={[styles.card, styles.shadowProp]}>
+        <View style={[styles.card, styles.borderProp]}>
                 { props.children }
         </View>
     )
@@ -10,13 +10,11 @@ export default function Card (props) {
 
 const styles = StyleSheet.create({
     card: {
+      flexDirection: 'column',
       backgroundColor: 'white',
-      borderRadius: 8,
-      paddingVertical: 45,
-      paddingHorizontal: 4,
-      width: '98vw',
-      marginVertical: 10,
-      flexDirection: 'row',
+      borderRadius: 2,
+      width: '48vw',
+      height: 300,
     },
     shadowProp: {
         shadowColor: '#171717',
@@ -24,5 +22,9 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 3,
       },
+    borderProp: {
+        borderBottomColor: '#c3c3c3',
+        borderBottomWidth: 1,
+    }
   });
   

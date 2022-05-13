@@ -10,6 +10,7 @@ function renderItem ({ item }) {
         <CardProfile 
             name={item.name}
             profileImage={item.profile}
+            email={item.email}
         />
     )
 }
